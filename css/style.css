@@ -1,0 +1,136 @@
+html {
+	background-color: lightyellow;
+}
+
+#big-container {
+	display: grid;
+	grid-template-columns: 441px;
+	grid-template-rows: [header] 154px [calculator] 483px;
+	grid-template-areas: "header" "calculator";
+	width: max-content;
+	/* height: 650px; */
+	margin: auto;
+}
+
+#header {
+	grid-area: header;
+	font-size: larger;
+	font-family: sans;
+  text-align: center;
+}
+
+#calculator {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: [display] 50px [buttonbox] auto;
+	grid-template-areas: 
+		"display"
+		"buttonbox";
+	border: brown solid 5px;
+}
+
+#display {
+	grid-area: display;
+
+	background-color: white;
+	border: black inset 3px;
+	padding: 5px;
+	text-align: right;
+	font-size: xx-large;
+}
+
+button {
+	height: 90px;
+	width: 90px;
+	margin: 8px;
+	border: black outset 3px;
+	padding: 0px;
+	font-size: xx-large;
+}
+
+button.num-button {
+	background-color: darkgoldenrod;
+}
+
+button.op-button {
+	background-color: darkturquoise;
+}
+
+/* =====================
+   Button Styles
+	 ===================== */
+
+#buttonbox {
+	grid-area: buttonbox;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+		"n7 n8 n9 div"
+		"n4 n5 n6 mul"
+		"n1 n2 n3 sub"
+		"n0 dot eq add";
+
+	place-self: stretch stretch;
+	place-items: center;
+}
+
+#n0 {
+	grid-area: n0;
+}
+
+#n1 {
+	grid-area: n1;
+}
+
+#n2 {
+	grid-area: n2;
+}
+
+#n3 {
+	grid-area: n3;
+}
+
+#n4 {
+	grid-area: n4;
+}
+
+#n5 {
+	grid-area: n5;
+}
+
+#n6 {
+	grid-area: n6;
+}
+
+#n7 {
+	grid-area: n7;
+}
+
+#n8 {
+	grid-area: n8;
+}
+
+#n9 {
+	grid-area: n9;
+}
+
+#add {
+	grid-area: add;
+}
+
+#sub {
+	grid-area: sub;
+}
+
+#mul {
+	grid-area: mul;
+}
+
+#div {
+	grid-area: div;
+}
+
+#eq {
+	grid-area: eq;
+}
