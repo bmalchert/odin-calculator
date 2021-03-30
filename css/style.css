@@ -134,3 +134,7 @@ button.op-button {
 #eq {
 	grid-area: eq;
 }
+
+#dot {
+	grid-area: dot;
+}
