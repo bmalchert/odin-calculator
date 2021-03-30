@@ -4,11 +4,10 @@ html {
 
 #big-container {
 	display: grid;
-	grid-template-columns: 441px;
-	grid-template-rows: [header] 154px [calculator] 483px;
+	grid-template-columns: 395px;
+	grid-template-rows: [header] 154px [calculator] 540px;
 	grid-template-areas: "header" "calculator";
 	width: max-content;
-	/* height: 650px; */
 	margin: auto;
 }
 
@@ -42,7 +41,7 @@ html {
 button {
 	height: 90px;
 	width: 90px;
-	margin: 8px;
+	margin: 3px;
 	border: black outset 3px;
 	padding: 0px;
 	font-size: xx-large;
@@ -64,8 +63,9 @@ button.op-button {
 	grid-area: buttonbox;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
-	grid-template-areas: 
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+	  "n_ n_ n_ clr" 
 		"n7 n8 n9 div"
 		"n4 n5 n6 mul"
 		"n1 n2 n3 sub"
@@ -137,4 +137,8 @@ button.op-button {
 
 #dot {
 	grid-area: dot;
+}
+
+#clear {
+	grid-area: clr;
 }
