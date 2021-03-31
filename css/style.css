@@ -20,12 +20,14 @@ html {
 
 #calculator {
 	display: grid;
+	background-color: rgb(75, 75, 75);
 	grid-template-columns: auto;
 	grid-template-rows: [display] 50px [buttonbox] auto;
 	grid-template-areas: 
 		"display"
 		"buttonbox";
-	border: brown solid 5px;
+	border: black outset 5px;
+	border-radius: 2%;
 }
 
 #display {
@@ -33,9 +35,11 @@ html {
 
 	background-color: white;
 	border: black inset 3px;
+	border-radius: 15%;
 	padding: 5px;
 	text-align: right;
-	font-size: xx-large;
+	font-size: 30px;
+	font-family: monospace;
 }
 
 button {
@@ -48,11 +52,12 @@ button {
 }
 
 button.num-button {
-	background-color: darkgoldenrod;
+	background-color: gray;
+	color: white;
 }
 
 button.op-button {
-	background-color: darkturquoise;
+	background-color: rgb(204, 201, 32);
 }
 
 /* =====================
