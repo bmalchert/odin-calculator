@@ -1,3 +1,8 @@
+// *****************************
+// DOM constants
+// *****************************
+const calculator = document.querySelector('#calculator');
+
 // ******************************
 // Basic math functions
 // ******************************
@@ -57,3 +62,22 @@ function operate(x, y, op) {
 
   return value;
 }
+
+// ******************************
+// Display object
+// ******************************
+
+const display = {
+  dom: document.querySelector('#display'),
+
+  // Clear the display
+  clear: function() {
+    this.populate("0");
+  },
+
+  // Populate the display with content
+  populate: function(content) {
+    this.dom.textContent = content;
+  },
+}
+
