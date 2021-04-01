@@ -6,9 +6,5 @@ A basic calculator, inspired by
 
 # Todo
 
-1.  basic math functions
-2.  `operate()` function
-3.  HTML basic calculator with buttons for digits, functions, `=` sign, and
-    'clear' button
-4.  functions to populate calculator display
-5.  put together
+1.  put together
+2.  reformat code
