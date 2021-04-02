@@ -36,7 +36,18 @@ const memory = {
     this.newDigitFlag = true;
     this.lastOperator = op;
   },
+
+  clear: function() {
+    this.x = 0;
+    this.y = 0;
+    this.lastOperator = EQ;
+    this.newDigitFlag = true;
+    display.clear();
+  }
 }
+
+// Bind the `this` for the memory object
+memory.clear = memory.clear.bind(memory)
 
 // *****************************
 // DOM constants
@@ -192,3 +203,9 @@ buttonElement.addEventListener('click', newOperatorButton.pushButton);
 newOperatorButton = new operatorButton(EQ);
 buttonElement = document.querySelector('.op-button#eq');
 buttonElement.addEventListener('click', newOperatorButton.pushButton);
+
+// ****************************
+// Add CLEAR button event listener
+// ****************************
+buttonElement = document.querySelector('.func-button#clear');
+buttonElement.addEventListener('click', memory.clear)
