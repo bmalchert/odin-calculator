@@ -1,3 +1,11 @@
+// Some constants
+const   ADD   =   'add';
+const   SUB   =   'subtract';
+const   MUL   =   'multiply';
+const   DIV   =   'divide';
+const   EQ    =   'equal';
+const   OPERR =   'invalid operator';
+
 // *************************
 // Calculator memory object
 // *************************
@@ -60,13 +68,6 @@ function divide(x, y) {
 //
 // Accepts two operands and an operator and calls the appropriate math function
 // ******************************
-
-const   ADD   =   'add';
-const   SUB   =   'subtract';
-const   MUL   =   'multiply';
-const   DIV   =   'divide';
-const   EQ    =   'equal';
-const   OPERR =   'invalid operator';
 
 function operate(x, y, op) {
   let value;
