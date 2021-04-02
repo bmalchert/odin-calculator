@@ -133,12 +133,28 @@ class numberButton {
   }
 }
 
+// ****************************************
+// Class for a button that represents an operator
+// ****************************************
+class operatorButton {
+  constructor(operator) {
+    this.operator = operator;
+
+    // bind `this` as in numberButton class
+    this.pushButton = this.pushButton.bind(this);
+  }
+
+  pushButton() {
+    memory.operate(this.operator);
+  }
+}
+
 // ** ** ** ** ** ** ** **
 // Create button objects
 // ** ** ** ** ** ** ** **
 const numberButtonArray = []
 
-// Add event listener
+// Add event listener for number buttons
 for (let i = 0; i < 10; i++) {
   let newNumberButton = new numberButton(i);
 
@@ -147,3 +163,32 @@ for (let i = 0; i < 10; i++) {
 
   numberButtonArray.push(newNumberButton);
 }
+
+// *** *** *** *** *** *** *** ***
+// Add event listeners for operator buttons
+// *** *** *** *** *** *** *** ***
+
+// Addition button
+let newOperatorButton = new operatorButton(ADD);
+let buttonElement = document.querySelector('.op-button#add');
+buttonElement.addEventListener('click', newOperatorButton.pushButton);
+
+// Subraction button
+newOperatorButton = new operatorButton(SUB);
+buttonElement = document.querySelector('.op-button#sub');
+buttonElement.addEventListener('click', newOperatorButton.pushButton);
+
+// Multiplication button
+newOperatorButton = new operatorButton(MUL);
+buttonElement = document.querySelector('.op-button#mul');
+buttonElement.addEventListener('click', newOperatorButton.pushButton);
+
+// Divide button
+newOperatorButton = new operatorButton(DIV);
+buttonElement = document.querySelector('.op-button#div');
+buttonElement.addEventListener('click', newOperatorButton.pushButton);
+
+// Equals button
+newOperatorButton = new operatorButton(EQ);
+buttonElement = document.querySelector('.op-button#eq');
+buttonElement.addEventListener('click', newOperatorButton.pushButton);
