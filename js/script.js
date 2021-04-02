@@ -115,3 +115,35 @@ const display = {
   },
 }
 
+// ****************************************
+// Class for a button that represents a number
+// ****************************************
+class numberButton {
+  constructor(number) {
+    this.number = number;
+
+    // we want `this` to always refer to the class instance. We need to do this
+    // because `pushButton` will be an event handler
+    this.pushButton = this.pushButton.bind(this);
+  }
+  
+  pushButton() {
+    console.log(this.number);
+    memory.addDigit(this.number); 
+  }
+}
+
+// ** ** ** ** ** ** ** **
+// Create button objects
+// ** ** ** ** ** ** ** **
+const numberButtonArray = []
+
+// Add event listener
+for (let i = 0; i < 10; i++) {
+  let newNumberButton = new numberButton(i);
+
+  let buttonElement = document.querySelector(`.num-button#n${i}`);
+  buttonElement.addEventListener('click', newNumberButton.pushButton);
+
+  numberButtonArray.push(newNumberButton);
+}
