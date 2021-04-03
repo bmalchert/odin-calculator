@@ -53,11 +53,25 @@ button {
 
 button.num-button {
 	background-color: gray;
+	border-color: rgb(175, 175, 175);
 	color: white;
+}
+
+button.num-button:hover {
+	background-color: rgb(167, 164, 164);
 }
 
 button.op-button {
 	background-color: rgb(204, 201, 32);
+	border-color: rgb(192, 191, 119);
+}
+
+button.op-button:hover {
+	background-color: rgb(240, 236, 38);
+}
+
+button:active {
+	border-style: inset;
 }
 
 /* =====================
