@@ -4,8 +4,8 @@ html {
 
 #big-container {
 	display: grid;
-	grid-template-columns: 395px;
-	grid-template-rows: [header] 154px [calculator] 540px;
+	grid-template-columns: 415px;
+	grid-template-rows: [header] 154px [calculator] 560px;
 	grid-template-areas: "header" "calculator";
 	width: max-content;
 	margin: auto;
