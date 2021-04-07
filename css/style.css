@@ -28,6 +28,7 @@ html {
 		"buttonbox";
 	border: black outset 5px;
 	border-radius: 2%;
+	padding: 10px;
 }
 
 #display {
@@ -41,6 +42,10 @@ html {
 	font-size: 30px;
 	font-family: monospace;
 }
+
+/* =====================================
+   Button Styles
+	 ===================================== */
 
 button {
 	height: 90px;
@@ -70,13 +75,19 @@ button.op-button:hover {
 	background-color: rgb(240, 236, 38);
 }
 
+button.func-button {
+	background-color: rgb(82, 92, 72);
+	border-color: rgb(117, 133, 101);
+	color: white;
+}
+
+button.func-button:hover {
+	background-color: rgb(111, 128, 94);
+}
+
 button:active {
 	border-style: inset;
 }
-
-/* =====================
-   Button Styles
-	 ===================== */
 
 #buttonbox {
 	grid-area: buttonbox;
