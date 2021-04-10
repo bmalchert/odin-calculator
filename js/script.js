@@ -21,6 +21,11 @@ const memory = {
   newDigitFlag: true,
 
   addDigit: function(n) {
+    // Prevent user adding multiple decimal places
+    if (n === '.' && this.x_string.includes('.')) {
+      return
+    }
+
     if (this.newDigitFlag) {
       this.y = this.x;
       this.x = 0;
