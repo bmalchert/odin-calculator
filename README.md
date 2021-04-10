@@ -6,6 +6,7 @@ A basic calculator, inspired by
 
 # Todo
 
-1.  put together
-2.  make prettier
-3.  reformat code
+1.  ~~put together~~
+2.  ~~make prettier~~
+3.  Add keyboard support
+4.  reformat code
