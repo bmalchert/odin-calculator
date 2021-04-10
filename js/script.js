@@ -49,7 +49,8 @@ const memory = {
     
     if (this.lastOperator !== EQ) {
       this.x = operate(this.x, this.y, this.lastOperator);
-      display.populate(this.x);
+      this.x_string = String(this.x)
+      display.populate(this.x_string);
     }
 
     this.newDigitFlag = true;
@@ -154,6 +155,9 @@ const display = {
 
   // Populate the display with content
   populate: function(content) {
+    // Print memory variables to consol
+    // console.log("x: " + memory.x);
+    // console.log("y: " + memory.y);
     this.dom.textContent = content;
   },
 }
@@ -171,7 +175,6 @@ class numberButton {
   }
   
   pushButton() {
-    console.log(this.number);
     memory.addDigit(this.number); 
   }
 }
