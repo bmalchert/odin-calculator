@@ -63,6 +63,16 @@ const memory = {
     this.lastOperator = EQ;
     this.newDigitFlag = true;
     display.clear();
+  },
+
+  backspace: function() {
+    this.x_string = this.x_string.slice(0,-1);
+    this.x = Number(this.x_string);
+    if (this.x_string === '') {
+      display.clear();
+    } else {
+      display.populate(this.x_string);
+    }
   }
 }
 
