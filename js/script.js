@@ -76,8 +76,10 @@ const memory = {
   }
 }
 
-// Bind the `this` for the memory object
+// Bind the `this` for the memory object. These funcions need to be bound since
+// they are event handlers for buttons.
 memory.clear = memory.clear.bind(memory)
+memory.backspace = memory.backspace.bind(memory)
 
 // *****************************
 // DOM constants
@@ -244,3 +246,9 @@ buttonElement.addEventListener('click', newOperatorButton.pushButton);
 // ****************************
 buttonElement = document.querySelector('.func-button#clear');
 buttonElement.addEventListener('click', memory.clear)
+
+// ****************************
+// Add BACKSPACE button event listener
+// ****************************
+buttonElement = document.querySelector('.func-button#backspace');
+buttonElement.addEventListener('click', memory.backspace)
