@@ -12,6 +12,11 @@ const   OPERR =   'invalid operator';
 const memory = {
   x: 0,
   y: 0,
+
+  // string variable for when the display value is different than the numeric
+  // value (e.g. when we want a decimal dot before any digits after the decimal)
+  x_string: '',
+  
   lastOperator: EQ,
   newDigitFlag: true,
 
@@ -19,11 +24,20 @@ const memory = {
     if (this.newDigitFlag) {
       this.y = this.x;
       this.x = 0;
+      this.x_string = '';
+
+      if (n === 0) {
+        display.populate(this.x);
+        return;
+      }
+
       this.newDigitFlag = false;
+
     }
     
-    this.x = Number(String(this.x) + String(n));
-    display.populate(this.x);
+    this.x_string = String(this.x_string) + String(n);
+    this.x = Number(this.x_string);
+    display.populate(this.x_string);
   },
 
   operate: function(op) {
@@ -39,6 +53,7 @@ const memory = {
 
   clear: function() {
     this.x = 0;
+    this.x_string = '';
     this.y = 0;
     this.lastOperator = EQ;
     this.newDigitFlag = true;
@@ -175,13 +190,18 @@ for (let i = 0; i < 10; i++) {
   numberButtonArray.push(newNumberButton);
 }
 
+// Add event listener for dot button
+let newNumberButton = new numberButton('.');
+let buttonElement = document.querySelector('.num-button#dot');
+buttonElement.addEventListener('click', newNumberButton.pushButton);
+
 // *** *** *** *** *** *** *** ***
 // Add event listeners for operator buttons
 // *** *** *** *** *** *** *** ***
 
 // Addition button
-let newOperatorButton = new operatorButton(ADD);
-let buttonElement = document.querySelector('.op-button#add');
+newOperatorButton = new operatorButton(ADD);
+buttonElement = document.querySelector('.op-button#add');
 buttonElement.addEventListener('click', newOperatorButton.pushButton);
 
 // Subraction button
