@@ -95,7 +95,7 @@ button:active {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-	  "n_ n_ n_ clr" 
+	    "n_ n_ del clr" 
 		"n7 n8 n9 div"
 		"n4 n5 n6 mul"
 		"n1 n2 n3 sub"
@@ -171,4 +171,8 @@ button:active {
 
 #clear {
 	grid-area: clr;
+}
+
+#backspace {
+	grid-area: del
 }
