@@ -255,3 +255,29 @@ buttonElement.addEventListener('click', memory.clear)
 // ****************************
 buttonElement = document.querySelector('.func-button#backspace');
 buttonElement.addEventListener('click', memory.backspace)
+
+// *********************************
+// Keyboard Listener
+// *********************************
+addEventListener('keydown', keyboardHandler)
+
+function keyboardHandler(e) {
+  let key = e.key
+
+  // When the keyboard press is a digit
+  if (0 <= key && key <= 9) {
+    memory.addDigit(Number(key))
+    return
+  }
+
+  // When the keyboard press is an operator, period, backspace, etc.
+  if (key === '+')                          memory.operate(ADD)
+  else if (key === '-')                     memory.operate(SUB)
+  else if (key === '*')                     memory.operate(MUL)
+  else if (key === '/')                     memory.operate(DIV)
+  else if (key === '=' || key === 'Enter')  memory.operate(EQ)
+  else if (key === '.')                     memory.addDigit('.')
+  else if (key === 'Backspace' 
+      || key === 'Delete')                  memory.backspace()
+  else if (key === 'Escape')                memory.clear()
+}
